@@ -1,0 +1,471 @@
+
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Менің алғашқы веб-бетім</title>
+
+    <style>
+
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            color: #34453f;
+
+            background: linear-gradient(
+                    135deg,
+                    #ddf7e9,
+                    #e6f8ed,
+                    #e9dfff,
+                    #f5efff
+            );
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 35px 15px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 780px;
+        }
+
+
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 22px;
+            padding: 0 10px;
+        }
+
+        .logo {
+            font-size: 21px;
+            font-weight: bold;
+            color: #328f76;
+        }
+
+        .year {
+            font-size: 14px;
+            color: #776d91;
+        }
+
+
+
+        .card {
+            background: #ffffff;
+            border-radius: 25px;
+            overflow: hidden;
+
+            border: 1px solid #e9e4f3;
+
+            box-shadow:
+                    0 20px 50px rgba(69, 89, 99, 0.13);
+        }
+
+
+
+        .banner {
+            position: relative;
+            overflow: hidden;
+
+            background: linear-gradient(
+                    120deg,
+                    #329b81,
+                    #78cb9d,
+                    #b19af5
+            );
+
+            padding: 45px;
+            color: white;
+        }
+
+
+
+        .banner::before {
+            content: "";
+            position: absolute;
+
+            width: 210px;
+            height: 210px;
+
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.15);
+
+            right: -60px;
+            top: -90px;
+        }
+
+        .banner::after {
+            content: "";
+            position: absolute;
+
+            width: 120px;
+            height: 120px;
+
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.15);
+
+            right: 105px;
+            bottom: -70px;
+        }
+
+        .lab-number {
+            display: inline-block;
+
+            padding: 9px 17px;
+            border-radius: 20px;
+
+            background: rgba(255, 255, 255, 0.23);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .banner h2 {
+            position: relative;
+            font-size: 32px;
+
+            margin-top: 27px;
+            margin-bottom: 12px;
+        }
+
+        .banner p {
+            position: relative;
+            font-size: 16px;
+            color: #f8fffc;
+            margin-bottom: 0;
+        }
+
+
+
+        .content {
+            padding: 45px;
+        }
+
+        .welcome {
+            display: inline-block;
+
+            background: #e5f8ee;
+            color: #348c72;
+
+            padding: 11px 20px;
+            border-radius: 25px;
+
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        h1 {
+            font-size: 38px;
+            color: #334b45;
+
+            margin-top: 26px;
+            margin-bottom: 12px;
+        }
+
+        .group {
+            font-size: 18px;
+            color: #78817e;
+        }
+
+        .group strong {
+            color: #9676d9;
+        }
+
+
+
+        .line {
+            width: 85px;
+            height: 5px;
+
+            background: linear-gradient(
+                    90deg,
+                    #78cb9d,
+                    #b19af5
+            );
+
+            border-radius: 10px;
+            margin: 28px 0;
+        }
+
+
+
+        .about {
+            background: linear-gradient(
+                    120deg,
+                    #edfaf2,
+                    #f1edff
+            );
+
+            padding: 25px;
+            border-radius: 16px;
+
+            border-left: 5px solid #78cb9d;
+        }
+
+        .about h3 {
+            margin-top: 0;
+            font-size: 20px;
+            color: #398e75;
+        }
+
+        .about p {
+            color: #65736e;
+            font-size: 15px;
+            line-height: 1.9;
+            margin-bottom: 0;
+        }
+
+
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 28px;
+        }
+
+        .skills span {
+            padding: 11px 20px;
+            border-radius: 25px;
+
+            font-size: 13px;
+            font-weight: bold;
+
+            transition: transform 0.2s;
+        }
+
+        .skills span:hover {
+            transform: translateY(-5px);
+        }
+
+        .html {
+            background: #ddf6e9;
+            color: #348d71;
+        }
+
+        .css {
+            background: #eee7ff;
+            color: #8161ca;
+        }
+
+        .design {
+            background: #e3f4ef;
+            color: #438d84;
+        }
+
+
+
+        .info {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            flex: 1;
+            padding: 20px;
+            border-radius: 15px;
+        }
+
+        .info-box h4 {
+            margin-top: 0;
+            margin-bottom: 8px;
+            font-size: 15px;
+        }
+
+        .info-box p {
+            margin: 0;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .green-box {
+            background: #edfaf3;
+            color: #348a70;
+        }
+
+        .purple-box {
+            background: #f1ecff;
+            color: #826ac1;
+        }
+
+
+
+        .footer {
+            text-align: center;
+            margin-top: 25px;
+
+            color: #69847b;
+            font-size: 13px;
+        }
+
+
+
+        @media (max-width: 600px) {
+            .banner {
+                padding: 28px;
+            }
+
+            .content {
+                padding: 28px;
+            }
+
+            .banner h2 {
+                font-size: 25px;
+            }
+
+            h1 {
+                font-size: 29px;
+            }
+
+            .logo {
+                font-size: 17px;
+            }
+
+            .year {
+                font-size: 12px;
+            }
+
+            .info {
+                flex-direction: column;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+
+
+    <header class="header">
+        <div class="logo">✦ WEB LAB</div>
+        <div class="year">2026 • HTML / CSS</div>
+    </header>
+
+    >
+
+    <main class="card">
+
+
+
+        <section class="banner">
+
+            <span class="lab-number">
+                № 01 — ЗЕРТХАНАЛЫҚ ЖҰМЫС
+            </span>
+
+            <h2>Менің алғашқы веб-бетім</h2>
+
+            <p>HTML және CSS негіздері</p>
+
+        </section>
+
+
+
+        <section class="content">
+
+            <span class="welcome">
+                 Сәлем, қош келдіңіз!
+            </span>
+
+            <h1>Каюм Көгершін</h1>
+
+            <p class="group">
+                Менің тобым:
+                <strong>ВТиПО 24-11</strong>
+            </p>
+
+            <div class="line"></div>
+
+
+
+            <div class="about">
+
+                <h3> Өзім туралы</h3>
+
+                <p>
+                    Сәлем! Бұл менің HTML және CSS
+                    көмегімен жасаған алғашқы веб-бетім.
+
+                    Мен веб-бағдарламалауды үйреніп
+                    жатырмын және жаңа технологияларға
+                    қызығушылық танытамын.
+
+                    Осы зертханалық жұмыста HTML
+                    құрылымын жасауды және CSS
+                    көмегімен веб-бетті әдемі
+                    безендіруді үйрендім.
+                </p>
+
+            </div>
+
+
+
+            <div class="skills">
+
+                <span class="html">HTML</span>
+
+                <span class="css">CSS</span>
+
+                <span class="design">Веб-дизайн</span>
+
+            </div>
+
+
+
+            <div class="info">
+
+                <div class="info-box green-box">
+
+                    <h4> HTML</h4>
+
+                    <p>
+                        Веб-беттің құрылымын
+                        жасауға арналған тіл.
+                    </p>
+
+                </div>
+
+                <div class="info-box purple-box">
+
+                    <h4> CSS</h4>
+
+                    <p>
+                        Веб-беттің сыртқы
+                        көрінісін безендіреді.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <footer class="footer">
+        Студенттік жоба • 2026
+    </footer>
+
+</div>
+
+</body>
+</html>
